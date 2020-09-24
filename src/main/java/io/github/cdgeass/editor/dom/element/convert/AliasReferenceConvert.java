@@ -38,7 +38,7 @@ public class AliasReferenceConvert extends Converter<PsiClass> implements Custom
             return null;
         }
 
-        var cacheManager = CacheManager.getInstance(context.getProject());
+        var cacheManager = CacheManager.SERVICE.getInstance(context.getProject());
         var psiFiles = cacheManager.getFilesWithWord(StringConstants.TYPE_ALIASES, UsageSearchContext.IN_PLAIN_TEXT,
                 GlobalSearchScope.allScope(context.getProject()), true);
 

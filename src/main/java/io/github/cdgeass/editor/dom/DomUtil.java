@@ -79,7 +79,7 @@ public class DomUtil extends com.intellij.util.xml.DomUtil {
             return Collections.emptyList();
         }
 
-        var cacheManager = CacheManager.getInstance(project);
+        var cacheManager = CacheManager.SERVICE.getInstance(project);
         var files = cacheManager.getFilesWithWord(namespace, UsageSearchContext.ANY,
                 GlobalSearchScope.allScope(project), true);
         if (ArrayUtils.isEmpty(files)) {
