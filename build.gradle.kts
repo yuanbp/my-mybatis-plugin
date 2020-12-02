@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.cdgeass"
-version = "1.2.8"
+version = "1.2.8.202"
 
 repositories {
     mavenCentral()
@@ -20,20 +20,22 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     type = "IU"
-    version = "IU-203-EAP-SNAPSHOT"
+    version = "IU-2020.2"
     setPlugins("java", "com.intellij.database")
 }
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_11
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
-    changeNotes("""
-    1.2.8</br>
+    changeNotes(
+        """
+    1.2.8.202</br>
     <ul>
         <li>fix item in <foreach></li>
         <li>fix scale tool window</li>
     </ul>
-      """)
+      """
+    )
 }
 tasks.publishPlugin {
     channels("stable")
