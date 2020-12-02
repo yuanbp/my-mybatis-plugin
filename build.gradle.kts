@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.cdgeass"
-version = "1.2.7.201"
+version = "1.2.8.201"
 
 repositories {
     mavenCentral()
@@ -28,9 +28,10 @@ configure<JavaPluginConvention> {
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
     changeNotes("""
-    1.2.7.201</br>
+    1.2.8.201</br>
     <ul>
-        <li>compatible with 201.*</li>
+        <li>fix item in <foreach></li>
+        <li>fix scale tool window</li>
     </ul>
       """)
 }
