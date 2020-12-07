@@ -27,15 +27,13 @@ configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_11
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
-    changeNotes(
-        """
+    changeNotes("""
     1.2.8.202</br>
     <ul>
         <li>fix item in <foreach></li>
         <li>fix scale tool window</li>
     </ul>
-      """
-    )
+    """)
 }
 tasks.publishPlugin {
     channels("stable")
